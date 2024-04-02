@@ -1,4 +1,4 @@
-# `Terraform studies`
+# `Terraform studies` 🌎
 
 <details>
   <summary> Configurações Iniciais:</summary>
