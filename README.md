@@ -67,6 +67,55 @@ terraform destroy
 
 </details>
 
+## 3. Variáveis
+
+<details>
+  <summary> Click me </summary>
+
+### Como utilizar variáveis dentro do `terraform`:
+
+1. Criamos um arquivo (`variables.tf`) para definirmos as nossas variáveis e seus tipos:
+
+```hcl
+variable "aws_region" {
+  type = string
+  description = ""
+  default = "us-east-1"
+}
+```
+
+> type => `string, number, bool`
+
+> description => `this specifies the input variable's documentation.`
+
+> default => `a default value which then makes the variable optional.`
+
+2. Para usar as variáveis criadas, basta utilizar a palavra reservada `var` e acessar ela como um objeto.
+
+```hcl
+provider "aws" {
+  region  = var.aws_region
+  profile = var.aws_profile
+}
+```
+
+> As variáveis que não possuírem um valor `default` serão preenchidas no momento de realizar o `plan`
+
+3. Nós também podemos utilizar um arquivo chamado `terraform.tfvars` para definirmos os **valores** das nossas variáveis
+
+```hcl
+# terraform.tfvars
+aws_region = "us-east-1"
+aws_profile = "default"
+instance_type = "t2.micro"
+```
+
+##
+
+</details>
+
+##
+
 ### TIPS:
 
 > lembrando que a maior parte dos comandos acima devem ser rodados na pasta em que há o seu `main.tf`
@@ -74,5 +123,3 @@ terraform destroy
 > para um gerenciamento de versões do `Terraform`, utilizamos o [tfenv](https://github.com/tfutils/tfenv)
 
 ##
-
-</details>
