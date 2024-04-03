@@ -1,4 +1,4 @@
-# `Terraform studies`
+# 🌎`Terraform studies` 
 
 <details>
   <summary> Configurações Iniciais:</summary>
@@ -53,7 +53,7 @@ terraform apply
 terraform plan
 ```
 
-> Esse comando irá planejar o que o se código irá realizar.
+> Esse comando irá planejar o que o se código irá realizar (adição ou edições).
 
 #
 
